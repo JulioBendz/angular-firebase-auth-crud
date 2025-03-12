@@ -16,7 +16,9 @@ export class LoginComponent {
   password: string = '';
   errorMessage: string = '';
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) {
+    console.log('ProfileComponent cargado'); // Log para verificar carga
+  }
 
   onLogin() {
     this.authService.login(this.email, this.password).subscribe({
