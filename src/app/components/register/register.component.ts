@@ -6,23 +6,29 @@ import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-register',
   standalone: true,
   imports: [RouterModule, CommonModule, FormsModule], // ✅ Agrega RouterModule aquí
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
 })
-export class LoginComponent {
+export class RegisterComponent {
   email: string = '';
   password: string = '';
+  confirmPassword: string = '';
   errorMessage: string = '';
 
   constructor(private authService: AuthService, private router: Router) {}
 
-  onLogin() {
-    this.authService.login(this.email, this.password).subscribe({
+  onRegister() {
+    if (this.password !== this.confirmPassword) {
+      this.errorMessage = 'Las contraseñas no coinciden';
+      return;
+    }
+
+    this.authService.register(this.email, this.password).subscribe({
       next: () => this.router.navigate(['/profile']),
-      error: () => this.errorMessage = 'Error al iniciar sesión. Verifica tus credenciales.'
+      error: () => this.errorMessage = 'Error al registrar. Inténtalo de nuevo.'
     });
   }
 }

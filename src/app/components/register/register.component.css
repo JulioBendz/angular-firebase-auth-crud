@@ -7,7 +7,7 @@ body, html {
     background: #f2f2f2;
   }
   
-  .login-container {
+  .register-container {
     width: 100%;
     max-width: 400px;
     padding: 20px;
@@ -20,12 +20,18 @@ body, html {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Centra completamente */
+    transform: translate(-50%, -50%);
   }
   
   form {
     display: flex;
     flex-direction: column;
+  }
+  
+  label {
+    text-align: left;
+    font-weight: bold;
+    margin-top: 10px;
   }
   
   input {
@@ -37,7 +43,7 @@ body, html {
   }
   
   button {
-    background: #007bff;
+    background: #28a745;
     color: white;
     padding: 10px;
     border: none;
@@ -48,7 +54,7 @@ body, html {
   }
   
   button:hover {
-    background: #0056b3;
+    background: #218838;
   }
   
   .error {
@@ -56,18 +62,18 @@ body, html {
     font-size: 14px;
   }
   
-  .register-link {
+  .login-link {
     margin-top: 15px;
     font-size: 14px;
   }
   
-  .register-link a {
-    color: #007bff;
+  .login-link a {
+    color: #28a745;
     text-decoration: none;
     font-weight: bold;
   }
   
-  .register-link a:hover {
+  .login-link a:hover {
     text-decoration: underline;
   }
   
